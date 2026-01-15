@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
@@ -17,6 +18,9 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import OrderTracking from "./pages/OrderTracking";
 import VendorApplication from "./pages/VendorApplication";
+import Wishlist from "./pages/Wishlist";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,8 +46,12 @@ const App = () => (
               <Route path="/profile" element={<Profile />} />
               <Route path="/order-tracking/:orderId" element={<OrderTracking />} />
               <Route path="/vendor-application" element={<VendorApplication />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <WhatsAppWidget />
           </BrowserRouter>
         </TooltipProvider>
       </CartProvider>

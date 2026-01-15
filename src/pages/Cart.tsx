@@ -43,7 +43,7 @@ const Cart: React.FC = () => {
                 <div className="flex-1">
                   <Link to={`/products/${item.product.slug}`} className="font-medium hover:text-primary">{item.product.name}</Link>
                   <p className="text-sm text-muted-foreground">{item.product.vendorName}</p>
-                  <p className="font-bold mt-1">${item.product.price.toFixed(2)} <span className="text-sm font-normal text-muted-foreground">{item.product.unit}</span></p>
+                  <p className="font-bold mt-1">KES {item.product.price.toLocaleString()} <span className="text-sm font-normal text-muted-foreground">{item.product.unit}</span></p>
                 </div>
                 <div className="flex flex-col items-end justify-between">
                   <button onClick={() => removeItem(item.productId)} className="text-muted-foreground hover:text-destructive">
@@ -63,10 +63,10 @@ const Cart: React.FC = () => {
             <div className="bg-card rounded-xl shadow-card p-6 sticky top-32">
               <h2 className="font-display text-xl font-semibold mb-4">Order Summary</h2>
               <div className="space-y-3 text-sm">
-                <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span>${subtotal.toFixed(2)}</span></div>
-                <div className="flex justify-between"><span className="text-muted-foreground">Delivery</span><span>{deliveryFee === 0 ? 'Free' : `$${deliveryFee.toFixed(2)}`}</span></div>
-                {deliveryFee > 0 && <p className="text-xs text-muted-foreground">Free delivery on orders over $50</p>}
-                <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>Total</span><span>${total.toFixed(2)}</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span>KES {subtotal.toLocaleString()}</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Delivery</span><span>{deliveryFee === 0 ? 'Free' : `KES ${deliveryFee.toLocaleString()}`}</span></div>
+                {deliveryFee > 0 && <p className="text-xs text-muted-foreground">Free delivery on orders over KES 2,000</p>}
+                <div className="border-t pt-3 flex justify-between font-bold text-lg"><span>Total</span><span>KES {total.toLocaleString()}</span></div>
               </div>
               <Button className="w-full mt-6" size="lg" asChild>
                 <Link to="/checkout">Checkout <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -80,3 +80,6 @@ const Cart: React.FC = () => {
 };
 
 export default Cart;
+
+
+

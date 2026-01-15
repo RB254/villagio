@@ -143,16 +143,16 @@ const Products: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline" className="cursor-pointer hover:bg-muted">
-                  Under $5
+                  Under KES 100
                 </Badge>
                 <Badge variant="outline" className="cursor-pointer hover:bg-muted">
-                  $5 - $15
+                  KES 100 - 500
                 </Badge>
                 <Badge variant="outline" className="cursor-pointer hover:bg-muted">
-                  $15 - $30
+                  KES 500 - 1,000
                 </Badge>
                 <Badge variant="outline" className="cursor-pointer hover:bg-muted">
-                  $30+
+                  KES 1,000+
                 </Badge>
               </div>
             </div>

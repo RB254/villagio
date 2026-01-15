@@ -82,23 +82,23 @@ const Register: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side - Form: White/Orange like Login */}
-          <div className="flex-1 p-8 lg:p-10 overflow-y-auto max-h-[90vh] bg-gradient-to-br from-white to-orange-50">
+          {/* Right Side - Form */}
+          <div className="flex-1 p-8 lg:p-10 overflow-y-auto max-h-[90vh]">
             <div className="max-w-sm mx-auto">
-              <h1 className="text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-2">Create Account</h1>
-              <p className="text-center text-gray-600 mb-6">Join Villagio for fresh groceries</p>
+              <h1 className="text-2xl lg:text-3xl font-bold text-white text-center mb-2">Create Account</h1>
+              <p className="text-center text-white/60 mb-6">Join Villagio for fresh groceries</p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <Label htmlFor="firstName" className="text-gray-700 text-sm mb-1.5 block">First Name</Label>
+                    <Label htmlFor="firstName" className="text-white/80 text-sm mb-1.5 block">First Name</Label>
                     <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange-500" />
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
                       <Input
                         id="firstName"
                         name="firstName"
                         placeholder="John"
-                        className="pl-10 h-11 bg-white border-orange-200 text-gray-800 placeholder:text-gray-400 rounded-xl focus:border-orange-400 focus:ring-orange-400"
+                        className="pl-10 h-11 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-xl focus:bg-white/15 focus:border-white/30"
                         value={formData.firstName}
                         onChange={handleChange}
                         required
@@ -106,12 +106,12 @@ const Register: React.FC = () => {
                     </div>
                   </div>
                   <div>
-                    <Label htmlFor="lastName" className="text-gray-700 text-sm mb-1.5 block">Last Name</Label>
+                    <Label htmlFor="lastName" className="text-white/80 text-sm mb-1.5 block">Last Name</Label>
                     <Input
                       id="lastName"
                       name="lastName"
                       placeholder="Doe"
-                      className="h-11 bg-white border-orange-200 text-gray-800 placeholder:text-gray-400 rounded-xl focus:border-orange-400 focus:ring-orange-400"
+                      className="h-11 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-xl focus:bg-white/15 focus:border-white/30"
                       value={formData.lastName}
                       onChange={handleChange}
                       required
@@ -120,15 +120,15 @@ const Register: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-gray-700 text-sm mb-1.5 block">Email Address</Label>
+                  <Label htmlFor="email" className="text-white/80 text-sm mb-1.5 block">Email Address</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange-500" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
                     <Input
                       id="email"
                       name="email"
                       type="email"
                       placeholder="you@example.com"
-                      className="pl-10 h-11 bg-white border-orange-200 text-gray-800 placeholder:text-gray-400 rounded-xl focus:border-orange-400 focus:ring-orange-400"
+                      className="pl-10 h-11 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-xl focus:bg-white/15 focus:border-white/30"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -137,15 +137,15 @@ const Register: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="phone" className="text-gray-700 text-sm mb-1.5 block">Phone Number</Label>
+                  <Label htmlFor="phone" className="text-white/80 text-sm mb-1.5 block">Phone Number</Label>
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange-500" />
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
                     <Input
                       id="phone"
                       name="phone"
                       type="tel"
                       placeholder="+254 700 123 456"
-                      className="pl-10 h-11 bg-white border-orange-200 text-gray-800 placeholder:text-gray-400 rounded-xl focus:border-orange-400 focus:ring-orange-400"
+                      className="pl-10 h-11 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-xl focus:bg-white/15 focus:border-white/30"
                       value={formData.phone}
                       onChange={handleChange}
                       required
@@ -154,15 +154,15 @@ const Register: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="password" className="text-gray-700 text-sm mb-1.5 block">Password</Label>
+                  <Label htmlFor="password" className="text-white/80 text-sm mb-1.5 block">Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange-500" />
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
                     <Input
                       id="password"
                       name="password"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="••••••••"
-                      className="pl-10 pr-10 h-11 bg-white border-orange-200 text-gray-800 placeholder:text-gray-400 rounded-xl focus:border-orange-400 focus:ring-orange-400"
+                      className="pl-10 pr-10 h-11 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-xl focus:bg-white/15 focus:border-white/30"
                       value={formData.password}
                       onChange={handleChange}
                       required
@@ -170,7 +170,7 @@ const Register: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-orange-500 transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition-colors"
                     >
                       {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </button>
@@ -178,15 +178,15 @@ const Register: React.FC = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="confirmPassword" className="text-gray-700 text-sm mb-1.5 block">Confirm Password</Label>
+                  <Label htmlFor="confirmPassword" className="text-white/80 text-sm mb-1.5 block">Confirm Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-orange-500" />
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
                     <Input
                       id="confirmPassword"
                       name="confirmPassword"
                       type={showPassword ? 'text' : 'password'}
                       placeholder="••••••••"
-                      className="pl-10 h-11 bg-white border-orange-200 text-gray-800 placeholder:text-gray-400 rounded-xl focus:border-orange-400 focus:ring-orange-400"
+                      className="pl-10 h-11 bg-white/10 border-white/20 text-white placeholder:text-white/40 rounded-xl focus:bg-white/15 focus:border-white/30"
                       value={formData.confirmPassword}
                       onChange={handleChange}
                       required
@@ -198,11 +198,11 @@ const Register: React.FC = () => {
                   <Checkbox
                     checked={agreeTerms}
                     onCheckedChange={(checked) => setAgreeTerms(checked as boolean)}
-                    className="border-orange-300 data-[state=checked]:bg-orange-500 mt-0.5"
+                    className="border-white/30 data-[state=checked]:bg-secondary data-[state=checked]:border-secondary mt-0.5"
                   />
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-white/70">
                     I agree to the{' '}
-                    <Link to="/terms" className="text-secondary hover:text-secondary-light" >Terms of Service</Link>
+                    <Link to="/terms" className="text-secondary hover:text-secondary-light">Terms of Service</Link>
                     {' '}and{' '}
                     <Link to="/privacy" className="text-secondary hover:text-secondary-light">Privacy Policy</Link>
                   </span>
@@ -210,7 +210,7 @@ const Register: React.FC = () => {
 
                 <Button
                   type="submit"
-                  className="w-full h-11 bg-secondary hover:bg-secondary-light text-secondary-foreground rounded-xl font-semibold" style={{ backgroundColor: 'hsl(152, 45%, 14%)' }}
+                  className="w-full h-11 bg-secondary hover:bg-secondary-light text-secondary-foreground rounded-xl font-semibold"
                   disabled={isLoading}
                 >
                   {isLoading ? 'Creating Account...' : 'Create Account'}
@@ -218,17 +218,17 @@ const Register: React.FC = () => {
 
                 <div className="relative my-4">
                   <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-gray-300" />
+                    <div className="w-full border-t border-white/20" />
                   </div>
                   <div className="relative flex justify-center">
-                    <span className="px-4 text-sm text-gray-500 bg-white">or continue with</span>
+                    <span className="px-4 text-sm text-white/50" style={{ backgroundColor: 'hsl(152, 45%, 14%)' }}>or continue with</span>
                   </div>
                 </div>
 
                 <Button
                   type="button"
                   variant="outline"
-                  className="w-full h-11 bg-orange-100 border-orange-300 text-gray-800 hover:bg-orange-200 rounded-xl font-medium"
+                  className="w-full h-11 bg-white/10 border-white/20 text-white hover:bg-white/20 rounded-xl font-medium"
                 >
                   <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -240,7 +240,7 @@ const Register: React.FC = () => {
                 </Button>
               </form>
 
-              <p className="text-center mt-6 text-gray-600">
+              <p className="text-center mt-6 text-white/60">
                 Already have an account?{' '}
                 <Link to="/login" className="text-secondary hover:text-secondary-light font-medium transition-colors">
                   Sign In
@@ -250,6 +250,51 @@ const Register: React.FC = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Footer */}
+      <footer className="py-6 border-t border-white/10">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
+            <div>
+              <h4 className="font-semibold text-secondary mb-3">About Villagio</h4>
+              <p className="text-white/60 text-xs leading-relaxed">
+                Your trusted partner for fresh, organic produce. Quality and freshness guaranteed.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-secondary mb-3">Quick Links</h4>
+              <ul className="space-y-1.5">
+                <li><Link to="/" className="text-white/60 hover:text-orange transition-colors text-xs">Home</Link></li>
+                <li><Link to="/products" className="text-white/60 hover:text-orange transition-colors text-xs">Shop</Link></li>
+                <li><Link to="/about" className="text-white/60 hover:text-orange transition-colors text-xs">About</Link></li>
+                <li><Link to="/contact" className="text-white/60 hover:text-orange transition-colors text-xs">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-secondary mb-3">Support</h4>
+              <ul className="space-y-1.5">
+                <li><Link to="/help" className="text-white/60 hover:text-orange transition-colors text-xs">Help Center</Link></li>
+                <li><Link to="/privacy" className="text-white/60 hover:text-orange transition-colors text-xs">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="text-white/60 hover:text-orange transition-colors text-xs">Terms of Service</Link></li>
+                <li><Link to="/shipping" className="text-white/60 hover:text-orange transition-colors text-xs">Shipping Info</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-secondary mb-3">Get in Touch</h4>
+              <ul className="space-y-1.5 text-white/60 text-xs">
+                <li>info@villagiofresh.co.ke</li>
+                <li>+254 115 566 775</li>
+                <li>Nairobi, Kenya</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 mt-6 pt-4 text-center">
+            <p className="text-white/40 text-xs">
+              © {currentYear} Villagio. All rights reserved. Made with love for fresh food lovers.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

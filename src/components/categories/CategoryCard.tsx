@@ -45,12 +45,12 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
 
           {/* Content */}
-          <div className="absolute inset-0 p-4 sm:p-5 md:p-6 flex flex-col justify-end">
+          <div className="absolute inset-0 p-6 flex flex-col justify-end">
             <div className="transform group-hover:-translate-y-2 transition-transform duration-300">
-              <h3 className={`font-display text-base sm:text-lg font-semibold text-background mb-1 ${isLarge ? 'md:text-2xl lg:text-3xl' : ''}`}>
+              <h3 className={`font-display font-bold text-background mb-1 ${isLarge ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
                 {category.name}
               </h3>
-              <p className="text-xs sm:text-sm text-muted-foreground mb-3 line-clamp-2">
+              <p className="text-background/80 text-sm mb-3 line-clamp-2">
                 {category.description}
               </p>
               <div className="flex items-center justify-between">

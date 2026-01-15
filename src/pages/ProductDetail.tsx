@@ -176,11 +176,11 @@ const ProductDetail: React.FC = () => {
               {/* Price */}
               <div className="flex items-baseline gap-3">
                 <span className="text-3xl font-bold text-foreground">
-                  ${product.price.toFixed(2)}
+                  KES {product.price.toLocaleString()}
                 </span>
                 {product.originalPrice && (
                   <span className="text-xl text-muted-foreground line-through">
-                    ${product.originalPrice.toFixed(2)}
+                    KES {product.originalPrice.toLocaleString()}
                   </span>
                 )}
                 <span className="text-muted-foreground">{product.unit}</span>
@@ -231,7 +231,7 @@ const ProductDetail: React.FC = () => {
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-leaf-light mb-2">
                     <Truck className="h-5 w-5 text-primary" />
                   </div>
-                  <p className="text-xs text-muted-foreground">Free Shipping<br/>Over $50</p>
+                  <p className="text-xs text-muted-foreground">Free Shipping<br/>Over KES 2,000</p>
                 </div>
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-leaf-light mb-2">
