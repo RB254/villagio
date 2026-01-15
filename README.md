@@ -1,16 +1,92 @@
-# React + Vite
+# Git Workflow Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## For Developers: Pushing to Develop Branch
 
-Currently, two official plugins are available:
+### 1. Stage Your Changes
+```bash
+git add .
+```
+This adds all your modified files to staging.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 2. Commit Your Changes
+```bash
+git commit -m "Your descriptive commit message here"
+```
+Write a clear message describing what you changed.
 
-## React Compiler
+### 3. Push to Develop Branch
+```bash
+git push origin develop
+```
+This pushes your commits to the `develop` branch on GitHub.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 4. Create a Pull Request
+- Go to your GitHub repository
+- Click on "Pull requests" → "New pull request"
+- Set base branch to `main` and compare branch to `develop`
+- Add a description of your changes
+- Request review from the FE Lead
+- Wait for approval before merging
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## For FE Lead: Merging to Main
+
+### Option 1: Via GitHub (Recommended)
+1. Review the pull request from the developer
+2. Check the code changes
+3. Click "Merge pull request" when satisfied
+4. Confirm the merge
+5. Delete the branch if needed
+
+### Option 2: Via Command Line
+```bash
+# Switch to main branch
+git checkout main
+
+# Pull latest changes
+git pull origin main
+
+# Merge develop into main
+git merge develop
+
+# Push to main
+git push origin main
+```
+
+---
+
+## Branch Protection Rules (Recommended Setup)
+
+To enforce this workflow on GitHub:
+
+1. Go to your repo → Settings → Branches
+2. Add rule for `main` branch
+3. Enable:
+   - "Require pull request reviews before merging"
+   - "Require status checks to pass"
+   - Restrict who can push to matching branches (add FE Lead only)
+
+This ensures only the FE Lead can push directly to `main`, while all other developers must go through pull requests.
+
+---
+
+## Quick Reference
+
+**Developers:** `develop` branch only  
+**FE Lead:** Can push to both `develop` and `main`
+
+**Check current branch:**
+```bash
+git branch
+```
+
+**Switch branches:**
+```bash
+git checkout branch-name
+```
+
+**Pull latest changes:**
+```bash
+git pull origin branch-name
+```
