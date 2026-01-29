@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# Git Workflow Guide
 
-## Project info
+## For Developers: Pushing to Develop Branch
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+### 1. Stage Your Changes
+```bash
+git add .
+```
+This adds all your modified files to staging.
 
-## How can I edit this code?
+### 2. Commit Your Changes
+```bash
+git commit -m "Your descriptive commit message here"
+```
+Write a clear message describing what you changed.
 
-There are several ways of editing your application.
+### 3. Push to Develop Branch
+```bash
+git push origin develop
+```
+This pushes your commits to the `develop` branch on GitHub.
 
-**Use Lovable**
+### 4. Create a Pull Request
+- Go to your GitHub repository
+- Click on "Pull requests" → "New pull request"
+- Set base branch to `main` and compare branch to `develop`
+- Add a description of your changes
+- Request review from the FE Lead
+- Wait for approval before merging
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## For FE Lead: Merging to Main
 
-**Use your preferred IDE**
+### Option 1: Via GitHub (Recommended)
+1. Review the pull request from the developer
+2. Check the code changes
+3. Click "Merge pull request" when satisfied
+4. Confirm the merge
+5. Delete the branch if needed
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Option 2: Via Command Line
+```bash
+# Switch to main branch
+git checkout main
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Pull latest changes
+git pull origin main
 
-Follow these steps:
+# Merge develop into main
+git merge develop
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Push to main
+git push origin main
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Branch Protection Rules (Recommended Setup)
 
-**Use GitHub Codespaces**
+To enforce this workflow on GitHub:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Go to your repo → Settings → Branches
+2. Add rule for `main` branch
+3. Enable:
+   - "Require pull request reviews before merging"
+   - "Require status checks to pass"
+   - Restrict who can push to matching branches (add FE Lead only)
 
-## What technologies are used for this project?
+This ensures only the FE Lead can push directly to `main`, while all other developers must go through pull requests.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Quick Reference
 
-## How can I deploy this project?
+**Developers:** `develop` branch only  
+**FE Lead:** Can push to both `develop` and `main`
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+**Check current branch:**
+```bash
+git branch
+```
 
-## Can I connect a custom domain to my Lovable project?
+**Switch branches:**
+```bash
+git checkout branch-name
+```
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Pull latest changes:**
+```bash
+git pull origin branch-name
+```
