@@ -14,7 +14,7 @@ import garlic from "@/assets/Vegy/Garlic.jpg";
 import lemonGrassVegy from "@/assets/Herbs/Lemongrass.jpg";
 import peas from "@/assets/Vegy/Peas.jpg";
 import chilli from "@/assets/Vegy/chilli.jpg";
-import potatoes from "@/assets/Vegy/category  potatoes.jpg";
+import potatoes from "@/assets/Vegy/category-potatoes.jpg";
 import onions from "@/assets/Slider/Onions.jpg";
 
 // Fruits
